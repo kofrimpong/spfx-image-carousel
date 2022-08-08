@@ -24,4 +24,5 @@ export interface IImageCarouselProps {
   height:string;
   width:string;
   legend?:string;
+  centerSlidePercentage?:number;
 }

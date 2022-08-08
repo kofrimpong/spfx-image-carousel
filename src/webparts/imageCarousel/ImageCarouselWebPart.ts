@@ -44,6 +44,7 @@ export interface IImageCarouselWebPartProps {
   width: string;
   legend: string;
   filters: IQueryFilter[];
+  centerSlidePercentage:number;
 }
 
 export default class ImageCarouselWebPart extends BaseClientSideWebPart <IImageCarouselWebPartProps> {
@@ -78,6 +79,7 @@ export default class ImageCarouselWebPart extends BaseClientSideWebPart <IImageC
   private popupHeightTextField: IPropertyPaneField<IPropertyPaneTextFieldProps>;
   private legendDropDown: PropertyPaneAsyncDropdown;
   private filtersPanel: PropertyPaneQueryFilterPanel;
+  private centerSlidePercentageTextField : IPropertyPaneField<IPropertyPaneTextFieldProps>;
 
   protected onInit(): Promise<void> {
     // Consume the new ThemeProvider service
@@ -97,6 +99,7 @@ export default class ImageCarouselWebPart extends BaseClientSideWebPart <IImageC
       this.properties.speed = this.properties.speed || 3000;
       this.properties.height = this.properties.height || '400px';
       this.properties.width = this.properties.width || '100%';
+      this.properties.centerSlidePercentage = this.properties.centerSlidePercentage || 100;
 
       resolve();
     });
@@ -132,7 +135,8 @@ export default class ImageCarouselWebPart extends BaseClientSideWebPart <IImageC
         height: this.properties.height,
         width: this.properties.width,
         legend: this.properties.legend,
-        displayMode:this.displayMode
+        displayMode:this.displayMode,
+        centerSlidePercentage:this.properties.centerSlidePercentage
       }
     );
 
@@ -250,6 +254,11 @@ export default class ImageCarouselWebPart extends BaseClientSideWebPart <IImageC
       placeholder: Text.format(strings.InPixel, 'Width')
     });
 
+    this.centerSlidePercentageTextField = PropertyPaneTextField(ContentQueryConstants.propertyCenterSlidePercentage, {
+      label: strings.CenterSlidePercentageFieldLabel,
+      placeholder: strings.InPercentage
+    });
+
     this.legendDropDown = new PropertyPaneAsyncDropdown(ContentQueryConstants.propertyLegend, {
       label: strings.LegendFieldLabel,
       loadingLabel: strings.LegendFieldLoadingLabel,
@@ -292,7 +301,8 @@ export default class ImageCarouselWebPart extends BaseClientSideWebPart <IImageC
                 this.showThumbsToggle,
                 this.stopOnHoverToggle,
                 this.popupHeightTextField,
-                this.popupWidthTextField
+                this.popupWidthTextField,
+                this.centerSlidePercentageTextField
               ]
             }
           ]

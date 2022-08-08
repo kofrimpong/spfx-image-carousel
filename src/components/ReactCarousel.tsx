@@ -19,6 +19,7 @@ export interface IReactCarouselProps {
     webUrl: string
     legend?: string
     showStatus?: boolean;
+    centerSlidePercentage?: number;
 }
 
 export const ReactCarousel: React.FC<IReactCarouselProps> = (props) => {
@@ -38,6 +39,8 @@ export const ReactCarousel: React.FC<IReactCarouselProps> = (props) => {
                     showThumbs={props.showThumbs}
                     stopOnHover={props.stopOnHover}
                     interval={props.speed}
+                    centerSlidePercentage={props.centerSlidePercentage}
+                    centerMode={parseInt(''+props.centerSlidePercentage) != 100}
                     width={props.width}>
                     {props.items.map((elm, index) =>
                         <div key={index} style={{ height: props.height }}>

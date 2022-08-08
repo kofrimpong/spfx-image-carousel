@@ -128,12 +128,14 @@ define([], function() {
     PopUpFieldLabel: "Render as PopUp",
     SpeedFieldLabel: "Speed",
     InPixel: "{0} in pixel",
+    InPercentage:"In percentage",
     WidthFieldLabel: "Width",
     HeightFieldLabel: "Height",
     LegendFieldLabel: "Legend Field",
     LegendFieldLoadingLabel: "Loading fields from selected list...",
     LegendFieldPlaceholder: "Select the source field...",
     NoItemToDisplay:"No items to display",
-    NoItemToDisplayDespcription:"In view mode, this area will be empty"
+    NoItemToDisplayDespcription:"In view mode, this area will be empty",
+    CenterSlidePercentageFieldLabel:"Center Slide Percentage"
   }
 });

@@ -166,7 +166,8 @@ export default class ImageCarousel extends React.Component<IImageCarouselProps, 
               items={items}
               height={this.props.height}
               webUrl={context.webUrl}
-              legend={this.props.legend} />
+              legend={this.props.legend}
+              centerSlidePercentage={this.props.centerSlidePercentage} />
       );
   }
 

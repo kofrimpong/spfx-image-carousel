@@ -64,6 +64,7 @@ declare interface IImageCarouselWebPartStrings {
   PopUpFieldLabel:string;
   SpeedFieldLabel:string;
   InPixel:string;
+  InPercentage:string;
   WidthFieldLabel:string;
   HeightFieldLabel:string;
   LegendFieldLabel: string;
@@ -71,6 +72,7 @@ declare interface IImageCarouselWebPartStrings {
   LegendFieldPlaceholder:string;
   NoItemToDisplay:string;
   NoItemToDisplayDespcription:string;
+  CenterSlidePercentageFieldLabel:string;
 }
 
 declare module 'ImageCarouselWebPartStrings' {

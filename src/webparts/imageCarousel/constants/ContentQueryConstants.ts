@@ -30,4 +30,5 @@ export class ContentQueryConstants {
     public static readonly propertyWidth = "width";
     public static readonly propertyHeight = "height";
     public static readonly propertyLegend = "legend";
+    public static readonly propertyCenterSlidePercentage = "centerSlidePercentage";
 }
