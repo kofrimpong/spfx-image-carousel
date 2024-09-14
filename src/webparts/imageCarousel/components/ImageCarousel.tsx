@@ -146,7 +146,7 @@ export default class ImageCarousel extends React.Component<IImageCarouselProps, 
       if (items.length == 0) {
           if (this.props.displayMode == DisplayMode.Edit) {
               return (
-                  <Placeholder iconName='FileImage'
+                  <Placeholder iconName='Info'
                       iconText={strings.NoItemToDisplay}
                       description={strings.NoItemToDisplayDespcription}
                   />
